@@ -5,21 +5,17 @@
 </div>
 
 <p align="center">
-  <center>
-    <a href="https://modrinth.com/mod/create-piss-n-shit">
-      <img alt="Modrinth" height="64" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/available/modrinth_vector.svg" />
-    </a>
-    <a href="https://github.com/TheClashFruit/CreatePissAndShit">
-      <img alt="GitHub" height="64" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/available/github_vector.svg" />
-    </a>
-    <a href="https://discord.gg/CWEApqJ6rc">
-      <img alt="Discord" height="64" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/social/discord-singular_vector.svg">
-    </a>
-  </center>
+  <a href="https://modrinth.com/mod/create-piss-n-shit">
+    <img alt="Modrinth" height="64" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/available/modrinth_vector.svg" />
+  </a>
+  <a href="https://github.com/TheClashFruit/CreatePissAndShit">
+    <img alt="GitHub" height="64" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/available/github_vector.svg" />
+  </a>
+  <a href="https://discord.gg/CWEApqJ6rc">
+    <img alt="Discord" height="64" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/social/discord-singular_vector.svg">
+  </a>
 </p>
 
 <p align="center">
-  <center>
-    A create add-on that adds piss and shit to the game with interesting mechanics!
-  </center>
+  A create add-on that adds piss and shit to the game with interesting mechanics!
 </p>
