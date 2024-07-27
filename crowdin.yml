@@ -1,0 +1,7 @@
+commit_message: "feat: %language% translations"
+append_commit_message: true
+
+files:
+  - source: src/main/resources/assets/pissnshit/lang/en_US.json
+    translation: src/main/resources/assets/pissnshit/lang/%locale_with_underscore%.json
+    update_option: update_as_unapproved
