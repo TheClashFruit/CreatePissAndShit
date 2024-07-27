@@ -1,4 +1,4 @@
-commit_message: "feat: %language% translations"
+commit_message: 'feat: %language% translations'
 append_commit_message: true
 
 files:
