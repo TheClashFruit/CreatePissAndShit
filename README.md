@@ -15,5 +15,5 @@
 </div>
 
 <p align="center">
-  A create add-on that adds piss and shit to the game with interesting mechanics!
+  A Create add-on that adds piss and shit to the game with interesting mechanics!
 </p>

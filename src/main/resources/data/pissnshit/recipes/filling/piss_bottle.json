@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "amount": 20250,
+      "fluidTag": "pissnshit:piss"
+    }
+  ],
+  "results": [
+    {
+      "item": "pissnshit:piss_bottle"
+    }
+  ]
+}

@@ -16,7 +16,18 @@ public class ModGroups {
         .icon(() -> new ItemStack(ModItems.PISS_BUCKET))
         .displayName(Text.translatable("itemGroup.pissnshit.creative_tab"))
         .entries((context, entries) -> {
+            // Piss
             entries.add(ModItems.PISS_BUCKET);
+            entries.add(ModItems.PISS_BOTTLE);
+
+            // Shit
+            // tba
+
+            // Blocks
+            // tba
+
+            // Items
+            // tba
         })
         .build();
 

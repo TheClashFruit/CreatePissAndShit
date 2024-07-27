@@ -6,6 +6,13 @@ import me.theclashfruit.pissnshit.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.Potions;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,5 +31,7 @@ public class PissAndShit implements ModInitializer {
         ModItems.register();
         ModBlocks.register();
         ModGroups.register();
+
+        // Potion PISS_BOTTLE = Registry.register(Registries.POTION, new Identifier(MOD_ID, "piss"), new Potion(new StatusEffectInstance(StatusEffects.NAUSEA, 3600)));
     }
 }

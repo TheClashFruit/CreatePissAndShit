@@ -3,9 +3,12 @@
   "id": "pissnshit",
   "version": "${version}",
   "name": "Create: Piss & Shit",
-  "description": "A Create mod add-on that adds... you guessed it! Piss and Shit!",
+  "description": "A Create add-on that adds piss and shit to the game with interesting mechanics!",
   "authors": [
     "TheClashFruit"
+  ],
+  "contributors": [
+    "blryface"
   ],
   "contact": {
     "sources": "https://github.com/TheClashFruit/CreatePissAndShit",
