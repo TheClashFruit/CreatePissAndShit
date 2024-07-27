@@ -1,5 +1,6 @@
 package me.theclashfruit.pissnshit;
 
+import me.theclashfruit.pissnshit.blocks.ModBlocks;
 import me.theclashfruit.pissnshit.items.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
@@ -21,13 +22,8 @@ public class ModGroups {
             entries.add(ModItems.PISS_BOTTLE);
 
             // Shit
-            // tba
-
-            // Blocks
-            // tba
-
-            // Items
-            // tba
+            entries.add(ModItems.SHIT);
+            entries.add(ModBlocks.SHIT_BLOCK);
         })
         .build();
 

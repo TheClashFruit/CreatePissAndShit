@@ -24,6 +24,20 @@ public class ModItems {
             .alwaysEdible()
             .build();
 
+    public static final FoodComponent SHIT_FOOD =
+        new FoodComponent
+            .Builder()
+            .statusEffect(
+                new StatusEffectInstance(StatusEffects.NAUSEA, 300), 1
+            )
+            .statusEffect(
+                new StatusEffectInstance(StatusEffects.POISON, 3600), 1
+            )
+            .saturationModifier(2.5f)
+            .hunger(2)
+            .alwaysEdible()
+            .build();
+
     public static PissBottle PISS_BOTTLE = Registry.register(
         Registries.ITEM,
         new Identifier(MOD_ID, "piss_bottle"),
@@ -34,6 +48,9 @@ public class ModItems {
                 .maxCount(16)
         )
     );
+
+    public static Item SHIT = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "shit"), new Item(new Item.Settings().food(SHIT_FOOD)));
+    public static BlockItem SHIT_BLOCK = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "shit_block"), new BlockItem(ModBlocks.SHIT_BLOCK, new Item.Settings()));
 
     public static void register() {}
 }

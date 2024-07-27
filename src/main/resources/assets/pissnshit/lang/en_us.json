@@ -2,8 +2,11 @@
   "item.pissnshit.piss_bucket": "Piss Bucket",
   "item.pissnshit.piss_bottle": "Piss Bottle",
 
+  "item.pissnshit.shit": "Shit",
+  "item.pissnshit.shit_block": "Shit Block",
+
   "block.pissnshit.piss": "Piss",
-  "block.pissnshit.mechanical_toilet": "Mechanical Toilet",
+  "block.pissnshit.shit_block": "Shit Block",
 
   "gamerule.pissSourceConversion": "Piss converts to source",
   "itemGroup.pissnshit.creative_tab": "Create: Piss & Shit"
