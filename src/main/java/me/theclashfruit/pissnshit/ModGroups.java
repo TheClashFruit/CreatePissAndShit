@@ -25,6 +25,7 @@ public class ModGroups {
             entries.add(ModItems.SHIT);
             entries.add(ModItems.HOLY_SHIT);
 
+            entries.add(ModItems.SHIT_CANDLE);
             entries.add(ModBlocks.SHIT_BLOCK);
         })
         .build();
