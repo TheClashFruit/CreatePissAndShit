@@ -28,9 +28,21 @@
   "mixins": [
     "pissnshit.mixins.json"
   ],
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/CWEApqJ6rc"
+      },
+      "parent": {
+        "id": "create"
+      },
+      "update_checker": true
+    }
+  },
   "depends": {
     "fabricloader": ">=${loader_version}",
-    "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "fabric": ">=${fabric_version}",
+    "minecraft": "${minecraft_version}",
+    "create": ">=${create_version}"
   }
 }
