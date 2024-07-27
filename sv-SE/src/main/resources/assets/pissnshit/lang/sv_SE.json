@@ -1,0 +1,13 @@
+{
+  "item.pissnshit.piss_bucket": "Piss Bucket",
+  "item.pissnshit.piss_bottle": "Piss Bottle",
+  "item.pissnshit.shit": "Shit",
+  "item.pissnshit.holy_shit": "Holy Shit",
+  "block.pissnshit.piss": "Piss",
+  "block.pissnshit.shit_block": "Shit Block",
+  "block.pissnshit.shit_candle": "Shit Candle",
+  "block.pissnshit.shit_candle.tooltip": "§8§oIt smells like shit...",
+  "block.pissnshit.mechanical_sanctifier": "Mechanical Sanctifier",
+  "gamerule.pissSourceConversion": "Piss converts to source",
+  "itemGroup.pissnshit.creative_tab": "Create: Piss & Shit"
+}
