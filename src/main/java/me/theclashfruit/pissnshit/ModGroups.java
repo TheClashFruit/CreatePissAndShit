@@ -23,6 +23,8 @@ public class ModGroups {
 
             // Shit
             entries.add(ModItems.SHIT);
+            entries.add(ModItems.HOLY_SHIT);
+
             entries.add(ModBlocks.SHIT_BLOCK);
         })
         .build();

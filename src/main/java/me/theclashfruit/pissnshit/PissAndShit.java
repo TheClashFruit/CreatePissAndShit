@@ -1,5 +1,6 @@
 package me.theclashfruit.pissnshit;
 
+import com.simibubi.create.Create;
 import me.theclashfruit.pissnshit.blocks.ModBlocks;
 import me.theclashfruit.pissnshit.fluid.ModFluids;
 import me.theclashfruit.pissnshit.items.ModItems;
@@ -33,7 +34,7 @@ public class PissAndShit implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("I pissed & shat my pants!");
+        LOGGER.info("I pissed & shat my pants! (Create Version: {})", Create.VERSION);
 
         ModFluids.register();
         ModItems.register();

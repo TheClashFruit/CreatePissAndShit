@@ -18,7 +18,7 @@ public class ModItems {
         new FoodComponent
             .Builder()
             .statusEffect(
-                new StatusEffectInstance(StatusEffects.NAUSEA, 3600), 1
+                new StatusEffectInstance(StatusEffects.NAUSEA, 1200), 1
             )
             .saturationModifier(1.2f)
             .alwaysEdible()
@@ -28,10 +28,10 @@ public class ModItems {
         new FoodComponent
             .Builder()
             .statusEffect(
-                new StatusEffectInstance(StatusEffects.NAUSEA, 300), 1
+                new StatusEffectInstance(StatusEffects.NAUSEA, 1200), 1
             )
             .statusEffect(
-                new StatusEffectInstance(StatusEffects.POISON, 3600), 1
+                new StatusEffectInstance(StatusEffects.POISON, 1200), 1
             )
             .saturationModifier(2.5f)
             .hunger(2)
@@ -50,6 +50,10 @@ public class ModItems {
     );
 
     public static Item SHIT = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "shit"), new Item(new Item.Settings().food(SHIT_FOOD)));
+
+    public static Item HOLY_SHIT = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "holy_shit"), new Item(new Item.Settings()));
+
+
     public static BlockItem SHIT_BLOCK = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "shit_block"), new BlockItem(ModBlocks.SHIT_BLOCK, new Item.Settings()));
 
     public static void register() {}
