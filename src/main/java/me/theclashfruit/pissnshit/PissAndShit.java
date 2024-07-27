@@ -6,8 +6,16 @@ import me.theclashfruit.pissnshit.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.LootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
@@ -32,6 +40,21 @@ public class PissAndShit implements ModInitializer {
         ModBlocks.register();
         ModGroups.register();
 
-        // Potion PISS_BOTTLE = Registry.register(Registries.POTION, new Identifier(MOD_ID, "piss"), new Potion(new StatusEffectInstance(StatusEffects.NAUSEA, 3600)));
+        Identifier jungleTemple  = new Identifier("minecraft", "chests/jungle_temple");
+        Identifier desertPyramid = new Identifier("minecraft", "chests/desert_pyramid");
+
+        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
+            if (jungleTemple.equals(id) || desertPyramid.equals(id)) {
+                tableBuilder.pool(
+                    LootPool
+                        .builder()
+                        .rolls(UniformLootNumberProvider.create(1, 8))
+                        .conditionally(RandomChanceLootCondition.builder(1f))
+                        .with(ItemEntry.builder(ModItems.SHIT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                        .build()
+                );
+            }
+        });
     }
 }
