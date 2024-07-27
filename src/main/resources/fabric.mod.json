@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "pissnshit",
+  "version": "${version}",
+  "name": "Create: Piss & Shit",
+  "description": "A Create mod add-on that adds... you guessed it! Piss and Shit!",
+  "authors": [
+    "TheClashFruit"
+  ],
+  "contact": {
+    "sources": "https://github.com/TheClashFruit/CreatePissAndShit",
+    "issues": "https://github.com/TheClashFruit/CreatePissAndShit/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/pissnshit/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.theclashfruit.pissnshit.client.PissAndShitClient"
+    ],
+    "main": [
+      "me.theclashfruit.pissnshit.PissAndShit"
+    ]
+  },
+  "mixins": [
+    "pissnshit.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
