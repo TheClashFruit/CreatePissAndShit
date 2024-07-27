@@ -7,6 +7,7 @@ import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 import static me.theclashfruit.pissnshit.PissAndShit.MOD_ID;
 import static me.theclashfruit.pissnshit.fluid.ModFluids.STILL_PISS;
@@ -50,7 +51,7 @@ public class ModItems {
     );
 
     public static Item SHIT      = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "shit"), new Item(new Item.Settings().food(SHIT_FOOD)));
-    public static Item HOLY_SHIT = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "holy_shit"), new Item(new Item.Settings()));
+    public static Item HOLY_SHIT = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "holy_shit"), new Item(new Item.Settings().rarity(Rarity.RARE)));
 
     public static BlockItem SHIT_BLOCK  = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "shit_block"), new BlockItem(ModBlocks.SHIT_BLOCK, new Item.Settings()));
     public static BlockItem SHIT_CANDLE = Registry.register(Registries.ITEM, new Identifier(MOD_ID, "shit_candle"), new ShitCandle(ModBlocks.SHIT_CANDLE, new Item.Settings()));
