@@ -9,5 +9,14 @@
   "block.pissnshit.shit_candle.tooltip": "§8§oSzar szaga van...",
   "block.pissnshit.mechanical_sanctifier": "Mechanikus Szentelő",
   "gamerule.pissSourceConversion": "Húgy forrássá alakulása",
-  "itemGroup.pissnshit.creative_tab": "Create: Húgy & Szar"
+  "itemGroup.pissnshit.creative_tab": "Create: Húgy & Szar",
+  "text.autoconfig.pissnshit.title": "Create: Húgy & Szar Konfiguráció",
+  "text.autoconfig.pissnshit.option.shittingMechanics": "Szarásmechanika",
+  "text.autoconfig.pissnshit.option.pissingMechanics": "Húgyozásmechanika",
+  "text.autoconfig.pissnshit.option.shittingMechanics.isMandatory": "Kötelező Szarás Bekapcsolása",
+  "text.autoconfig.pissnshit.option.shittingMechanics.maxIntervalTicks": "Maximális Intervallum (Tickek)",
+  "text.autoconfig.pissnshit.option.shittingMechanics.minIntervalTicks": "Minimális Intervallum (Tickek)",
+  "text.autoconfig.pissnshit.option.pissingMechanics.isMandatory": "Kötelező Pisilés Bekapcsolása",
+  "text.autoconfig.pissnshit.option.pissingMechanics.maxIntervalTicks": "Maximális Intervallum (Tickek)",
+  "text.autoconfig.pissnshit.option.pissingMechanics.minIntervalTicks": "Minimális Intervallum (Tickek)"
 }
