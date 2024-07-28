@@ -12,7 +12,6 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
-import net.minecraft.data.Main;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
@@ -29,6 +28,8 @@ public class PissAndShit implements ModInitializer {
 
     public static final GameRules.Key<GameRules.BooleanRule> PISS_SOURCE_CONVERSION = GameRuleRegistry.register("pissSourceConversion", GameRules.Category.UPDATES, GameRuleFactory.createBooleanRule(false));
 
+    public static MainConfig CONFIG;
+
     @Override
     public void onInitialize() {
         LOGGER.info("I pissed & shat my pants! (Create Version: {})", Create.VERSION);
@@ -40,6 +41,8 @@ public class PissAndShit implements ModInitializer {
         ItemGroups.init();
 
         AutoConfig.register(MainConfig.class, Toml4jConfigSerializer::new);
+
+        CONFIG = AutoConfig.getConfigHolder(MainConfig.class).getConfig();
 
         Identifier jungleTemple  = new Identifier("minecraft", "chests/jungle_temple");
         Identifier desertPyramid = new Identifier("minecraft", "chests/desert_pyramid");
