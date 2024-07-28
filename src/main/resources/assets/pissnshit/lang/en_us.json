@@ -14,5 +14,18 @@
   "block.pissnshit.mechanical_sanctifier": "Mechanical Sanctifier",
 
   "gamerule.pissSourceConversion": "Piss converts to source",
-  "itemGroup.pissnshit.creative_tab": "Create: Piss & Shit"
+  "itemGroup.pissnshit.creative_tab": "Create: Piss & Shit",
+
+  "text.autoconfig.pissnshit.title": "Create: Piss & Shit Configuration",
+
+  "text.autoconfig.pissnshit.option.shittingMechanics": "Shitting Mechanics",
+  "text.autoconfig.pissnshit.option.pissingMechanics": "Pissing Mechanics",
+
+  "text.autoconfig.pissnshit.option.shittingMechanics.isMandatory": "Enable Mandatory Shitting",
+  "text.autoconfig.pissnshit.option.shittingMechanics.maxIntervalTicks": "Max Interval (Ticks)",
+  "text.autoconfig.pissnshit.option.shittingMechanics.minIntervalTicks": "Min Interval (Ticks)",
+
+  "text.autoconfig.pissnshit.option.pissingMechanics.isMandatory": "Enable Mandatory Pissing",
+  "text.autoconfig.pissnshit.option.pissingMechanics.maxIntervalTicks": "Max Interval (Ticks)",
+  "text.autoconfig.pissnshit.option.pissingMechanics.minIntervalTicks": "Min Interval (Ticks)"
 }

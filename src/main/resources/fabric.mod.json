@@ -23,6 +23,9 @@
     ],
     "main": [
       "me.theclashfruit.pissnshit.PissAndShit"
+    ],
+    "modmenu": [
+      "me.theclashfruit.pissnshit.util.ModMenu"
     ]
   },
   "mixins": [

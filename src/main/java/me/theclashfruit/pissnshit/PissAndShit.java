@@ -1,6 +1,9 @@
 package me.theclashfruit.pissnshit;
 
 import com.simibubi.create.Create;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+import me.theclashfruit.pissnshit.config.MainConfig;
 import me.theclashfruit.pissnshit.registry.Blocks;
 import me.theclashfruit.pissnshit.registry.Fluids;
 import me.theclashfruit.pissnshit.registry.Items;
@@ -9,6 +12,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.minecraft.data.Main;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
@@ -34,6 +38,8 @@ public class PissAndShit implements ModInitializer {
         Blocks.init();
 
         ItemGroups.init();
+
+        AutoConfig.register(MainConfig.class, Toml4jConfigSerializer::new);
 
         Identifier jungleTemple  = new Identifier("minecraft", "chests/jungle_temple");
         Identifier desertPyramid = new Identifier("minecraft", "chests/desert_pyramid");
