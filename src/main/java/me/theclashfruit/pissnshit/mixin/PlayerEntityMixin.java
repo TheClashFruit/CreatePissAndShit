@@ -25,6 +25,7 @@ public class PlayerEntityMixin implements PlayerEntityUtil {
     public void tick(CallbackInfo ci) {
         if (!((PlayerEntity) (Object) this).getWorld().isClient) {
             pissManager.update(((PlayerEntity) (Object) this));
+            shitManager.update(((PlayerEntity) (Object) this));
         }
     }
 
@@ -37,6 +38,7 @@ public class PlayerEntityMixin implements PlayerEntityUtil {
     )
     public void writeCustomDataToNbt(NbtCompound nbt, CallbackInfo ci) {
         pissManager.writeNbt(nbt);
+        shitManager.writeNbt(nbt);
     }
 
     @Inject(
@@ -45,6 +47,7 @@ public class PlayerEntityMixin implements PlayerEntityUtil {
     )
     public void readCustomDataFromNbt(NbtCompound nbt, CallbackInfo ci) {
         pissManager.readNbt(nbt);
+        shitManager.readNbt(nbt);
     }
 
 

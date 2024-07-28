@@ -14,14 +14,8 @@ public class PissAndShitHudOverlay implements Drawable {
 
     private final MinecraftClient client;
 
-    private final int randFirst;
-    private final int randSecond;
-
     public PissAndShitHudOverlay(MinecraftClient client) {
         this.client = client;
-
-        this.randFirst = (int) (Math.random() * 100);
-        this.randSecond = (int) (Math.random() * 100);
     }
 
     @Override
@@ -40,7 +34,7 @@ public class PissAndShitHudOverlay implements Drawable {
         int fullPissIcons      = pissLevel / 10;
         int remainingPissLevel = pissLevel - (fullPissIcons * 10);
 
-        int shitLevel          = this.randSecond;
+        int shitLevel          = ((PlayerEntityUtil) this.client.player).getShitManager().getShitLevel();
         int fullShitIcons      = shitLevel / 10;
         int remainingShitLevel = shitLevel - (fullShitIcons * 10);
 

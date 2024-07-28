@@ -2,6 +2,7 @@ package me.theclashfruit.pissnshit.client;
 
 import me.theclashfruit.pissnshit.client.gui.PissAndShitHudOverlay;
 import me.theclashfruit.pissnshit.network.PissSyncPacket;
+import me.theclashfruit.pissnshit.network.ShitSyncPacket;
 import me.theclashfruit.pissnshit.registry.Fluids;
 import me.theclashfruit.pissnshit.util.PissManager;
 import me.theclashfruit.pissnshit.util.PlayerEntityUtil;
@@ -37,5 +38,6 @@ public class PissAndShitClient implements ClientModInitializer {
 
         // Register Packets
         PissSyncPacket.register();
+        ShitSyncPacket.register();
     }
 }

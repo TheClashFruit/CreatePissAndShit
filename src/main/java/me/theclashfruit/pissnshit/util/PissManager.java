@@ -10,7 +10,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import static me.theclashfruit.pissnshit.PissAndShit.CONFIG;
 
 public class PissManager {
-    private int pissLevel = 15;
+    private int pissLevel = 16;
 
     private int pissTickTimer;
 
@@ -59,6 +59,7 @@ public class PissManager {
         if (nbt.contains("pissLevel", NbtElement.NUMBER_TYPE)) {
             this.pissLevel     = nbt.getInt("pissLevel");
             this.pissTickTimer = nbt.getInt("pissTickTimer");
+
             this.lastPissTick  = nbt.getLong("lastPissTick");
         }
     }
@@ -66,6 +67,7 @@ public class PissManager {
     public void writeNbt(NbtCompound nbt) {
         nbt.putInt("pissLevel", this.pissLevel);
         nbt.putInt("pissTickTimer", this.pissTickTimer);
+
         nbt.putLong("lastPissTick", this.lastPissTick);
     }
 
