@@ -4,6 +4,7 @@
   "package": "me.theclashfruit.pissnshit.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "PlayerEntityMixin"
   ],
   "client": [
   ],
