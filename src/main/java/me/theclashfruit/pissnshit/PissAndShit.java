@@ -1,26 +1,19 @@
 package me.theclashfruit.pissnshit;
 
 import com.simibubi.create.Create;
-import me.theclashfruit.pissnshit.blocks.ModBlocks;
-import me.theclashfruit.pissnshit.fluid.ModFluids;
-import me.theclashfruit.pissnshit.items.ModItems;
+import me.theclashfruit.pissnshit.registry.Blocks;
+import me.theclashfruit.pissnshit.registry.Fluids;
+import me.theclashfruit.pissnshit.registry.Items;
+import me.theclashfruit.pissnshit.registry.ItemGroups;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.loot.provider.number.LootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.Potions;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.GameRules;
 import org.slf4j.Logger;
@@ -36,10 +29,11 @@ public class PissAndShit implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("I pissed & shat my pants! (Create Version: {})", Create.VERSION);
 
-        ModFluids.register();
-        ModItems.register();
-        ModBlocks.register();
-        ModGroups.register();
+        Fluids.init();
+        Items.init();
+        Blocks.init();
+
+        ItemGroups.init();
 
         Identifier jungleTemple  = new Identifier("minecraft", "chests/jungle_temple");
         Identifier desertPyramid = new Identifier("minecraft", "chests/desert_pyramid");
@@ -51,7 +45,7 @@ public class PissAndShit implements ModInitializer {
                         .builder()
                         .rolls(UniformLootNumberProvider.create(1, 8))
                         .conditionally(RandomChanceLootCondition.builder(1f))
-                        .with(ItemEntry.builder(ModItems.SHIT))
+                        .with(ItemEntry.builder(Items.SHIT))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
                         .build()
                 );

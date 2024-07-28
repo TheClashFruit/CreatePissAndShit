@@ -1,8 +1,9 @@
 package me.theclashfruit.pissnshit.fluid;
 
 import me.theclashfruit.pissnshit.PissAndShit;
-import me.theclashfruit.pissnshit.blocks.ModBlocks;
-import me.theclashfruit.pissnshit.items.ModItems;
+import me.theclashfruit.pissnshit.registry.Blocks;
+import me.theclashfruit.pissnshit.registry.Items;
+import me.theclashfruit.pissnshit.registry.Fluids;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -26,12 +27,12 @@ public class PissFluid extends FlowableFluid {
 
     @Override
     public Fluid getFlowing() {
-        return ModFluids.FLOWING_PISS;
+        return Fluids.FLOWING_PISS;
     }
 
     @Override
     public Fluid getStill() {
-        return ModFluids.STILL_PISS;
+        return Fluids.STILL_PISS;
     }
 
     @Override
@@ -58,7 +59,7 @@ public class PissFluid extends FlowableFluid {
 
     @Override
     public Item getBucketItem() {
-        return ModItems.PISS_BUCKET;
+        return Items.PISS_BUCKET;
     }
 
     @Override
@@ -78,7 +79,7 @@ public class PissFluid extends FlowableFluid {
 
     @Override
     protected BlockState toBlockState(FluidState state) {
-        return ModBlocks.PISS.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(state));
+        return Blocks.PISS.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(state));
     }
 
     @Override
@@ -88,7 +89,7 @@ public class PissFluid extends FlowableFluid {
 
     @Override
     public boolean matchesType(Fluid fluid) {
-        return fluid == ModFluids.STILL_PISS || fluid == ModFluids.FLOWING_PISS;
+        return fluid == Fluids.STILL_PISS || fluid == Fluids.FLOWING_PISS;
     }
 
     @Override

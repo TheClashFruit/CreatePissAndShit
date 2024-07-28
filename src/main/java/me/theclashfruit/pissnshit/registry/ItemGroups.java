@@ -1,7 +1,5 @@
-package me.theclashfruit.pissnshit;
+package me.theclashfruit.pissnshit.registry;
 
-import me.theclashfruit.pissnshit.blocks.ModBlocks;
-import me.theclashfruit.pissnshit.items.ModItems;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -12,25 +10,25 @@ import net.minecraft.util.Identifier;
 
 import static me.theclashfruit.pissnshit.PissAndShit.MOD_ID;
 
-public class ModGroups {
+public class ItemGroups {
     public static final ItemGroup PISS_N_SHIT = FabricItemGroup.builder()
-        .icon(() -> new ItemStack(ModItems.PISS_BUCKET))
+        .icon(() -> new ItemStack(Items.PISS_BUCKET))
         .displayName(Text.translatable("itemGroup.pissnshit.creative_tab"))
         .entries((context, entries) -> {
             // Piss
-            entries.add(ModItems.PISS_BUCKET);
-            entries.add(ModItems.PISS_BOTTLE);
+            entries.add(Items.PISS_BUCKET);
+            entries.add(Items.PISS_BOTTLE);
 
             // Shit
-            entries.add(ModItems.SHIT);
-            entries.add(ModItems.HOLY_SHIT);
+            entries.add(Items.SHIT);
+            entries.add(Items.HOLY_SHIT);
 
-            entries.add(ModItems.SHIT_CANDLE);
-            entries.add(ModBlocks.SHIT_BLOCK);
+            entries.add(Items.SHIT_CANDLE);
+            entries.add(Blocks.SHIT_BLOCK);
         })
         .build();
 
-    public static void register() {
+    public static void init() {
         Registry.register(Registries.ITEM_GROUP, new Identifier(MOD_ID, "creative_tab"), PISS_N_SHIT);
     }
 }
