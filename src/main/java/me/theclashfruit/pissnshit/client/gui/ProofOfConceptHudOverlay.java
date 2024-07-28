@@ -1,6 +1,7 @@
 package me.theclashfruit.pissnshit.client.gui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import me.theclashfruit.pissnshit.util.PlayerEntityUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.Drawable;
@@ -30,7 +31,9 @@ public class ProofOfConceptHudOverlay implements Drawable {
 
         RenderSystem.setShaderTexture(0, ICONS);
 
-        int pissLevel          = this.randFirst;
+        assert this.client.player != null;
+
+        int pissLevel          = ((PlayerEntityUtil) this.client.player).getPissManager().getPissLevel();
         int fullPissIcons      = pissLevel / 10;
         int remainingPissLevel = pissLevel - (fullPissIcons * 10);
 

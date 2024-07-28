@@ -4,6 +4,7 @@ import com.simibubi.create.Create;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import me.theclashfruit.pissnshit.config.MainConfig;
+import me.theclashfruit.pissnshit.network.PissSyncPacket;
 import me.theclashfruit.pissnshit.registry.Blocks;
 import me.theclashfruit.pissnshit.registry.Fluids;
 import me.theclashfruit.pissnshit.registry.Items;
@@ -60,5 +61,8 @@ public class PissAndShit implements ModInitializer {
                 );
             }
         });
+
+        // Register Packets
+        PissSyncPacket.register();
     }
 }

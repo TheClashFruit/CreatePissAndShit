@@ -1,9 +1,11 @@
 package me.theclashfruit.pissnshit.util;
 
+import me.theclashfruit.pissnshit.network.PissSyncPacket;
 import me.theclashfruit.pissnshit.registry.DamageTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
+import net.minecraft.server.network.ServerPlayerEntity;
 
 import static me.theclashfruit.pissnshit.PissAndShit.CONFIG;
 
@@ -33,6 +35,9 @@ public class PissManager {
             } else {
                 this.pissLevel += 1;
             }
+
+            // Sync Piss Level
+            PissSyncPacket.sendToClient((ServerPlayerEntity) player, this.pissLevel);
 
             this.lastPissTick = currentWorldTicks;
         }
@@ -66,5 +71,9 @@ public class PissManager {
 
     public int getPissLevel() {
         return this.pissLevel;
+    }
+
+    public void setPissLevel(int pissLevel) {
+        this.pissLevel = pissLevel;
     }
 }
