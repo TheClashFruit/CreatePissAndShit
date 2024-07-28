@@ -1,6 +1,6 @@
 package me.theclashfruit.pissnshit.client;
 
-import me.theclashfruit.pissnshit.client.gui.ProofOfConceptHudOverlay;
+import me.theclashfruit.pissnshit.client.gui.PissAndShitHudOverlay;
 import me.theclashfruit.pissnshit.network.PissSyncPacket;
 import me.theclashfruit.pissnshit.registry.Fluids;
 import me.theclashfruit.pissnshit.util.PissManager;
@@ -15,8 +15,6 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
 
-import static me.theclashfruit.pissnshit.PissAndShit.LOGGER;
-
 public class PissAndShitClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
@@ -28,9 +26,8 @@ public class PissAndShitClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), Fluids.STILL_PISS, Fluids.FLOWING_PISS);
 
-        // will be transferred to a mixin to InGameHud.java
-        MinecraftClient          client     = MinecraftClient.getInstance();
-        ProofOfConceptHudOverlay hudOverlay = new ProofOfConceptHudOverlay(client);
+        MinecraftClient       client     = MinecraftClient.getInstance();
+        PissAndShitHudOverlay hudOverlay = new PissAndShitHudOverlay(client);
 
         HudRenderCallback.EVENT.register((matrices, tickDelta) -> {
             if (client.player != null) {
@@ -38,16 +35,7 @@ public class PissAndShitClient implements ClientModInitializer {
             }
         });
 
-        ClientPlayNetworking.registerGlobalReceiver(PissSyncPacket.ID, (c, handler, buf, responseSender) -> {
-            PissSyncPacket.SyncPacket packet = PissSyncPacket.SyncPacket.decode(buf);
-
-            c.execute(() -> {
-                if (c.player != null) {
-                    PissManager pissManager = ((PlayerEntityUtil) c.player).getPissManager();
-
-                    pissManager.setPissLevel(packet.pissLevel());
-                }
-            });
-        });
+        // Register Packets
+        PissSyncPacket.register();
     }
 }

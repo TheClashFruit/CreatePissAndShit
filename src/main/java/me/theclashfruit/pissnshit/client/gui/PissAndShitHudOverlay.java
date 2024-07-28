@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 
 import static me.theclashfruit.pissnshit.PissAndShit.MOD_ID;
 
-public class ProofOfConceptHudOverlay implements Drawable {
+public class PissAndShitHudOverlay implements Drawable {
     private static final Identifier ICONS = new Identifier(MOD_ID, "textures/gui/icons.png");
 
     private final MinecraftClient client;
@@ -17,7 +17,7 @@ public class ProofOfConceptHudOverlay implements Drawable {
     private final int randFirst;
     private final int randSecond;
 
-    public ProofOfConceptHudOverlay(MinecraftClient client) {
+    public PissAndShitHudOverlay(MinecraftClient client) {
         this.client = client;
 
         this.randFirst = (int) (Math.random() * 100);
@@ -32,6 +32,9 @@ public class ProofOfConceptHudOverlay implements Drawable {
         RenderSystem.setShaderTexture(0, ICONS);
 
         assert this.client.player != null;
+
+        if (client.player.isCreative() || client.player.isSpectator())
+            return;
 
         int pissLevel          = ((PlayerEntityUtil) this.client.player).getPissManager().getPissLevel();
         int fullPissIcons      = pissLevel / 10;

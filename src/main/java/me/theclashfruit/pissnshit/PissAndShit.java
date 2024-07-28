@@ -61,8 +61,5 @@ public class PissAndShit implements ModInitializer {
                 );
             }
         });
-
-        // Register Packets
-        PissSyncPacket.register();
     }
 }
