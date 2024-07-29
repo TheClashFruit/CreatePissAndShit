@@ -5,10 +5,8 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import me.theclashfruit.pissnshit.config.MainConfig;
 import me.theclashfruit.pissnshit.network.PissSyncPacket;
-import me.theclashfruit.pissnshit.registry.Blocks;
-import me.theclashfruit.pissnshit.registry.Fluids;
-import me.theclashfruit.pissnshit.registry.Items;
-import me.theclashfruit.pissnshit.registry.ItemGroups;
+import me.theclashfruit.pissnshit.network.PissingPacket;
+import me.theclashfruit.pissnshit.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
@@ -39,6 +37,9 @@ public class PissAndShit implements ModInitializer {
         Items.init();
         Blocks.init();
 
+        StatusEffects.init();
+        Potions.init();
+
         ItemGroups.init();
 
         AutoConfig.register(MainConfig.class, Toml4jConfigSerializer::new);
@@ -61,5 +62,8 @@ public class PissAndShit implements ModInitializer {
                 );
             }
         });
+
+        // Register Packets
+        PissingPacket.register();
     }
 }

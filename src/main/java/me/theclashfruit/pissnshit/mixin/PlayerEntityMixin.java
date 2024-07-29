@@ -4,12 +4,15 @@ import me.theclashfruit.pissnshit.util.PissManager;
 import me.theclashfruit.pissnshit.util.PlayerEntityUtil;
 import me.theclashfruit.pissnshit.util.ShitManager;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerEntity.class)
 public class PlayerEntityMixin implements PlayerEntityUtil {
@@ -29,8 +32,13 @@ public class PlayerEntityMixin implements PlayerEntityUtil {
         }
     }
 
-    // Lnet/minecraft/entity/player/PlayerEntity;eatFood(Lnet/minecraft/world/World;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;
-
+    @Inject(
+        at = @At("HEAD"),
+        method = "eatFood(Lnet/minecraft/world/World;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;"
+    )
+    public void eatFood(World world, ItemStack stack, CallbackInfoReturnable<ItemStack> cir) {
+        shitManager.eat(stack, ((PlayerEntity) (Object) this));
+    }
 
     @Inject(
         at = @At("TAIL"),

@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.text.Text;
 
 import static me.theclashfruit.pissnshit.PissAndShit.CONFIG;
 
@@ -15,6 +16,7 @@ public class PissManager {
     private int pissTickTimer;
 
     private long lastPissTick;
+    private long lastPissTime;
 
     private final long maxInterval;
     private final long minInterval;
@@ -55,12 +57,34 @@ public class PissManager {
         }
     }
 
+    public void piss(int amount, PlayerEntity player) {
+        long currentWorldTicks = player.getWorld().getTime();
+
+        if ((currentWorldTicks - this.minInterval >= this.lastPissTime || currentWorldTicks - this.lastPissTime <= 10) && currentWorldTicks - this.lastPissTime >= 5) {
+            if (pissLevel >= 1) {
+                this.pissLevel -= amount;
+            } else {
+                player.sendMessage(Text.literal("You can't piss yet!"), true);
+            }
+
+            // Sync Piss Level
+            PissSyncPacket.sendToClient((ServerPlayerEntity) player, this.pissLevel);
+
+            this.lastPissTime = currentWorldTicks;
+        } else if (currentWorldTicks - this.lastPissTime <= 5) {
+            return;
+        } else {
+            player.sendMessage(Text.literal("You can't piss yet!"), true);
+        }
+    }
+
     public void readNbt(NbtCompound nbt) {
         if (nbt.contains("pissLevel", NbtElement.NUMBER_TYPE)) {
             this.pissLevel     = nbt.getInt("pissLevel");
             this.pissTickTimer = nbt.getInt("pissTickTimer");
 
             this.lastPissTick  = nbt.getLong("lastPissTick");
+            this.lastPissTime  = nbt.getLong("lastPissTime");
         }
     }
 
@@ -69,6 +93,7 @@ public class PissManager {
         nbt.putInt("pissTickTimer", this.pissTickTimer);
 
         nbt.putLong("lastPissTick", this.lastPissTick);
+        nbt.putLong("lastPissTime", this.lastPissTime);
     }
 
     public int getPissLevel() {

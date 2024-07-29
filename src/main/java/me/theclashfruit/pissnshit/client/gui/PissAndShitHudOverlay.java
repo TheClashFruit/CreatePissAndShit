@@ -34,9 +34,9 @@ public class PissAndShitHudOverlay implements Drawable {
         int fullPissIcons      = pissLevel / 10;
         int remainingPissLevel = pissLevel - (fullPissIcons * 10);
 
-        int shitLevel          = ((PlayerEntityUtil) this.client.player).getShitManager().getShitLevel();
-        int fullShitIcons      = shitLevel / 10;
-        int remainingShitLevel = shitLevel - (fullShitIcons * 10);
+        double shitLevel          = ((PlayerEntityUtil) this.client.player).getShitManager().getShitLevel();
+        int    fullShitIcons      = (int) (shitLevel / 10);
+        int    remainingShitLevel = (int) (shitLevel - (fullShitIcons * 10));
 
         for (int i = 0; i < 10; i++) {
             int iconX = x - (9 - i) * 8 - 9;

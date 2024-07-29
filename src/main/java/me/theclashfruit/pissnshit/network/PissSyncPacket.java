@@ -16,7 +16,7 @@ public class PissSyncPacket {
 
     public static void register() {
         ClientPlayNetworking.registerGlobalReceiver(PissSyncPacket.ID, (c, handler, buf, responseSender) -> {
-            PissSyncPacket.SyncPacket packet = PissSyncPacket.SyncPacket.decode(buf);
+            Packet packet = Packet.decode(buf);
 
             c.execute(() -> {
                 if (c.player != null) {
@@ -31,17 +31,17 @@ public class PissSyncPacket {
     public static void sendToClient(ServerPlayerEntity player, int pissLevel) {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
 
-        new SyncPacket(pissLevel)
+        new Packet(pissLevel)
             .encode(buf);
 
         ServerPlayNetworking.send(player, ID, buf);
     }
 
-    public record SyncPacket(int pissLevel) {
-        public static SyncPacket decode(PacketByteBuf buf) {
+    public record Packet(int pissLevel) {
+        public static Packet decode(PacketByteBuf buf) {
             int pissLevel = buf.readInt();
 
-            return new SyncPacket(pissLevel);
+            return new Packet(pissLevel);
         }
 
         public void encode(PacketByteBuf buf) {

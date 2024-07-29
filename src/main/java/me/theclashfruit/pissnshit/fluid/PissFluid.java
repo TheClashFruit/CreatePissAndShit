@@ -4,6 +4,7 @@ import me.theclashfruit.pissnshit.PissAndShit;
 import me.theclashfruit.pissnshit.registry.Blocks;
 import me.theclashfruit.pissnshit.registry.Items;
 import me.theclashfruit.pissnshit.registry.Fluids;
+import me.theclashfruit.pissnshit.registry.Tags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -64,7 +65,7 @@ public class PissFluid extends FlowableFluid {
 
     @Override
     protected boolean canBeReplacedWith(FluidState state, BlockView world, BlockPos pos, Fluid fluid, Direction direction) {
-        return direction == Direction.DOWN && !fluid.isIn(FluidTags.WATER);
+        return direction == Direction.DOWN && !fluid.isIn(Tags.PISS);
     }
 
     @Override

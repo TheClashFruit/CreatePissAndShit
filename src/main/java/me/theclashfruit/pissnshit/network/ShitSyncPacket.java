@@ -1,7 +1,6 @@
 package me.theclashfruit.pissnshit.network;
 
 import io.netty.buffer.Unpooled;
-import me.theclashfruit.pissnshit.util.PissManager;
 import me.theclashfruit.pissnshit.util.PlayerEntityUtil;
 import me.theclashfruit.pissnshit.util.ShitManager;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -17,7 +16,7 @@ public class ShitSyncPacket {
 
     public static void register() {
         ClientPlayNetworking.registerGlobalReceiver(ShitSyncPacket.ID, (c, handler, buf, responseSender) -> {
-            ShitSyncPacket.SyncPacket packet = ShitSyncPacket.SyncPacket.decode(buf);
+            Packet packet = Packet.decode(buf);
 
             c.execute(() -> {
                 if (c.player != null) {
@@ -29,24 +28,24 @@ public class ShitSyncPacket {
         });
     }
 
-    public static void sendToClient(ServerPlayerEntity player, int shitLevel) {
+    public static void sendToClient(ServerPlayerEntity player, double shitLevel) {
         PacketByteBuf buf = new PacketByteBuf(Unpooled.buffer());
 
-        new SyncPacket(shitLevel)
+        new Packet(shitLevel)
             .encode(buf);
 
         ServerPlayNetworking.send(player, ID, buf);
     }
 
-    public record SyncPacket(int shitLevel) {
-        public static SyncPacket decode(PacketByteBuf buf) {
-            int shitLevel = buf.readInt();
+    public record Packet(double shitLevel) {
+        public static Packet decode(PacketByteBuf buf) {
+            double shitLevel = buf.readDouble();
 
-            return new SyncPacket(shitLevel);
+            return new Packet(shitLevel);
         }
 
         public void encode(PacketByteBuf buf) {
-            buf.writeInt(shitLevel);
+            buf.writeDouble(shitLevel);
         }
     }
 }
