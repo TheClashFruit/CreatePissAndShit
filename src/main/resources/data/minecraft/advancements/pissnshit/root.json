@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "pissnshit:piss_bucket"
+    },
+    "title": {
+      "translate": "advancements.pissnshit.root.title"
+    },
+    "background": "pissnshit:textures/gui/advancements/backgrounds/main.png",
+    "description": {
+      "translate": "advancements.pissnshit.root.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}
