@@ -4,7 +4,6 @@ import com.simibubi.create.Create;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import me.theclashfruit.pissnshit.config.MainConfig;
-import me.theclashfruit.pissnshit.network.PissSyncPacket;
 import me.theclashfruit.pissnshit.network.PissingPacket;
 import me.theclashfruit.pissnshit.registry.*;
 import net.fabricmc.api.ModInitializer;

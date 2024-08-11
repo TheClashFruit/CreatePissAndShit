@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "pissnshit:piss_bottle"
+    },
+    "title": {
+      "translate": "advancements.pissnshit.yellow_liquid.title"
+    },
+    "description": {
+      "translate": "advancements.pissnshit.yellow_liquid.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:pissnshit/root",
+  "criteria": {
+    "piss_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pissnshit:piss_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "piss_bottle"
+    ]
+  ]
+}

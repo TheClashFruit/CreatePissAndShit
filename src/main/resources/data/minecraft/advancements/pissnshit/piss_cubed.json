@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "pissnshit:piss_bucket"
+    },
+    "title": {
+      "translate": "advancements.pissnshit.piss_cubed.title"
+    },
+    "description": {
+      "translate": "advancements.pissnshit.piss_cubed.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:pissnshit/yellow_liquid",
+  "criteria": {
+    "piss_bucket": {
+      "conditions": {
+        "item": {
+          "items": [
+            "pissnshit:piss_bucket"
+          ]
+        }
+      },
+      "trigger": "minecraft:filled_bucket"
+    }
+  },
+  "requirements": [
+    [
+      "piss_bucket"
+    ]
+  ]
+}

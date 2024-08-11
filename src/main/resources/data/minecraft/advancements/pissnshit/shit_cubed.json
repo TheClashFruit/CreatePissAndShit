@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "pissnshit:shit_block"
+    },
+    "title": {
+      "translate": "advancements.pissnshit.shit_cubed.title"
+    },
+    "description": {
+      "translate": "advancements.pissnshit.shit_cubed.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:pissnshit/shitty_encounter",
+  "criteria": {
+    "shit_block": {
+      "conditions": {
+        "recipe_id": "pissnshit:shit_block"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "requirements": [
+    [
+      "shit_block"
+    ]
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "pissnshit:shit"
+    },
+    "title": {
+      "translate": "advancements.pissnshit.shitty_encounter.title"
+    },
+    "description": {
+      "translate": "advancements.pissnshit.shitty_encounter.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:pissnshit/root",
+  "criteria": {
+    "shit": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pissnshit:shit"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "shit"
+    ]
+  ]
+}

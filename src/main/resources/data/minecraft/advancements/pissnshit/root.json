@@ -10,7 +10,7 @@
     "description": {
       "translate": "advancements.pissnshit.root.description"
     },
-    "frame": "challenge",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": false
   },

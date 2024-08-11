@@ -21,8 +21,22 @@
 
   "item.minecraft.tipped_arrow.effect.diarrhea_potion": "Arrow of Diarrhea",
 
-  "advancements.pissnshit.root.title": "You just lost the game.",
-  "advancements.pissnshit.root.description": "Seriously why'd you use this mod?",
+  "advancements.pissnshit.root.title": "Create: Piss & Shit",
+  "advancements.pissnshit.root.description": "You just lost the game. Seriously why'd you use this mod?",
+
+  "advancements.pissnshit.shitty_encounter.title": "Shitty Encounter",
+  "advancements.pissnshit.shitty_encounter.description": "Obtain some shit by emptying your bowels or stumbling upon some.",
+  "advancements.pissnshit.the_pope.title": "The Pope",
+  "advancements.pissnshit.the_pope.description": "Sanctify a piece of shit.",
+  "advancements.pissnshit.shit_cubed.title": "Shit³",
+  "advancements.pissnshit.shit_cubed.description": "Craft a block of shit.",
+  "advancements.pissnshit.chemical_attack.title": "Chemical Attack",
+  "advancements.pissnshit.chemical_attack.description": "Craft a shit candle.",
+
+  "advancements.pissnshit.yellow_liquid.title": "Yellow Liquid",
+  "advancements.pissnshit.yellow_liquid.description": "Obtain a bottle of piss.",
+  "advancements.pissnshit.piss_cubed.title": "Piss³",
+  "advancements.pissnshit.piss_cubed.description": "Obtain a bucket of piss.",
 
   "death.attack.fullOfPiss": "%1$s got full of piss.",
   "death.attack.fullOfShit": "%1$s got full of shit.",
