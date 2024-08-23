@@ -31,6 +31,8 @@
   "death.attack.fullOfShit": "%1$s got full of shit.",
   "gamerule.pissSourceConversion": "Piss converts to source",
   "itemGroup.pissnshit.creative_tab": "Create: Piss & Shit",
+  "screen.pissnshit.disclaimer.title": "Disclaimer",
+  "screen.pissnshit.disclaimer.message": "Thank you for installing §6Create: Piss & Shit§r.\n\nBefore you continue we'd like to warn you that this mod might contain offensive content for some, you're free to continue or exit Minecraft.",
   "text.autoconfig.pissnshit.title": "Create: Piss & Shit Configuration",
   "text.autoconfig.pissnshit.option.shittingMechanics": "Shitting Mechanics",
   "text.autoconfig.pissnshit.option.pissingMechanics": "Pissing Mechanics",
