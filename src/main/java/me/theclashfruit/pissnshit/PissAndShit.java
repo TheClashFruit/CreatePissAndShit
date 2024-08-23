@@ -2,6 +2,7 @@ package me.theclashfruit.pissnshit;
 
 import com.simibubi.create.Create;
 import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.ConfigHolder;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import me.theclashfruit.pissnshit.config.MainConfig;
 import me.theclashfruit.pissnshit.network.PissingPacket;
@@ -27,6 +28,7 @@ public class PissAndShit implements ModInitializer {
     public static final GameRules.Key<GameRules.BooleanRule> PISS_SOURCE_CONVERSION = GameRuleRegistry.register("pissSourceConversion", GameRules.Category.UPDATES, GameRuleFactory.createBooleanRule(false));
 
     public static MainConfig CONFIG;
+    public static ConfigHolder<MainConfig> CONFIG_HOLDER;
 
     @Override
     public void onInitialize() {
@@ -43,7 +45,8 @@ public class PissAndShit implements ModInitializer {
 
         AutoConfig.register(MainConfig.class, Toml4jConfigSerializer::new);
 
-        CONFIG = AutoConfig.getConfigHolder(MainConfig.class).getConfig();
+        CONFIG_HOLDER = AutoConfig.getConfigHolder(MainConfig.class);
+        CONFIG        = CONFIG_HOLDER.getConfig();
 
         Identifier jungleTemple  = new Identifier("minecraft", "chests/jungle_temple");
         Identifier desertPyramid = new Identifier("minecraft", "chests/desert_pyramid");

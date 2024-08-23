@@ -1,4 +1,4 @@
-package me.theclashfruit.pissnshit.client.gui;
+package me.theclashfruit.pissnshit.client.gui.hud;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import me.theclashfruit.pissnshit.util.PlayerEntityUtil;

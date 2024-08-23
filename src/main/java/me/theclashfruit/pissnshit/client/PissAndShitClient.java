@@ -1,17 +1,16 @@
 package me.theclashfruit.pissnshit.client;
 
-import me.theclashfruit.pissnshit.client.gui.PissAndShitHudOverlay;
+import me.theclashfruit.pissnshit.client.gui.hud.PissAndShitHudOverlay;
 import me.theclashfruit.pissnshit.network.PissSyncPacket;
 import me.theclashfruit.pissnshit.network.PissingPacket;
 import me.theclashfruit.pissnshit.network.ShitSyncPacket;
 import me.theclashfruit.pissnshit.registry.Fluids;
-import me.theclashfruit.pissnshit.util.PissManager;
-import me.theclashfruit.pissnshit.util.PlayerEntityUtil;
+import me.theclashfruit.pissnshit.client.gui.screen.DisclaimerScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
@@ -19,10 +18,10 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
+
+import static me.theclashfruit.pissnshit.PissAndShit.CONFIG;
 
 public class PissAndShitClient implements ClientModInitializer {
     private static KeyBinding keyBinding;
@@ -44,6 +43,11 @@ public class PissAndShitClient implements ClientModInitializer {
             if (client.player != null) {
                 hudOverlay.render(matrices, 0, 0, tickDelta);
             }
+        });
+
+        ClientLifecycleEvents.CLIENT_STARTED.register(c -> {
+            if (!CONFIG.hasShownDisclaimer)
+                c.setScreen(new DisclaimerScreen());
         });
 
         // Register Packets

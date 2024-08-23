@@ -9,6 +9,9 @@ public class MainConfig implements ConfigData {
     @ConfigEntry.Gui.Excluded
     public int configVersion = 1;
 
+    @ConfigEntry.Gui.Excluded
+    public boolean hasShownDisclaimer = false;
+
     @ConfigEntry.Gui.CollapsibleObject
     public ShittingMechanics shittingMechanics = new ShittingMechanics();
 
