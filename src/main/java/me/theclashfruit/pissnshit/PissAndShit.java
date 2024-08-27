@@ -8,6 +8,7 @@ import me.theclashfruit.pissnshit.config.MainConfig;
 import me.theclashfruit.pissnshit.criteria.ToiletUseTrigger;
 import me.theclashfruit.pissnshit.network.PissingPacket;
 import me.theclashfruit.pissnshit.registry.*;
+import me.theclashfruit.pissnshit.util.FlushedUtil;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
@@ -69,6 +70,8 @@ public class PissAndShit implements ModInitializer {
                 );
             }
         });
+
+        LOGGER.info(FlushedUtil.flushify("Hello, World!"));
 
         // Register Packets
         PissingPacket.register();

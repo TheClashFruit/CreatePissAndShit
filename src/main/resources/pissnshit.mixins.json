@@ -8,7 +8,9 @@
     "PlayerEntityMixin"
   ],
   "client": [
-    "InGameHudMixin"
+    "InGameHudMixin",
+    "MinecraftClientMixin",
+    "TextRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
