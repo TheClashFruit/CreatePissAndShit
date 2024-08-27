@@ -46,27 +46,5 @@ public class Blocks {
 
     public static final BlockEntityType<MechanicalToiletBlockEntity> MECHANICAL_TOILET_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "mechanical_toilet_block_entity"), BlockEntityType.Builder.create(MechanicalToiletBlockEntity::new, MECHANICAL_TOILET).build(null));
 
-        /*
-        REGISTRATE
-        .block("encased_fan", MechanicalToiletBlock::new)
-        .initialProperties(SharedProperties::copperMetal)
-        .properties(p -> p.mapColor(MapColor.ORANGE))
-        .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
-        .transform(BlockStressDefaults.setImpact(8.0))
-        .item()
-        .transform(customItemModel())
-        .addLayer(() -> RenderLayer::getCutout)
-        .register();
-         */
-
-    /*
-    public static final BlockEntityEntry<MechanicalToiletBlockEntity> MECHANICAL_TOILET_ENTITY = REGISTRATE
-        .blockEntity("encased_fan", MechanicalToiletBlockEntity::new)
-        .instance(() -> MechanicalToiletCogInstance::new)
-        .validBlocks(MECHANICAL_TOILET)
-        .renderer(() -> MechanicalToiletRenderer::new)
-        .register();
-     */
-
     public static void init() {}
 }

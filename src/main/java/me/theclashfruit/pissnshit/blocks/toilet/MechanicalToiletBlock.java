@@ -8,18 +8,24 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.function.BooleanBiFunction;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
+import static me.theclashfruit.pissnshit.PissAndShit.TOILET_USED;
 import static net.minecraft.state.property.Properties.HORIZONTAL_FACING;
 
 public class MechanicalToiletBlock extends HorizontalFacingBlock implements IBE<MechanicalToiletBlockEntity>, IWrenchable {
@@ -84,6 +90,26 @@ public class MechanicalToiletBlock extends HorizontalFacingBlock implements IBE<
     @Override
     public BlockEntityType<? extends MechanicalToiletBlockEntity> getBlockEntityType() {
         return Blocks.MECHANICAL_TOILET_BLOCK_ENTITY;
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (!world.isClient) {
+            if (player.hasVehicle()) {
+                return ActionResult.PASS;
+            }
+
+            MechanicalToiletSeatEntity seatEntity = MechanicalToiletSeatEntity.create(world, pos);
+
+            world.spawnEntity(seatEntity);
+            player.startRiding(seatEntity);
+
+            TOILET_USED.trigger(player);
+
+            return ActionResult.SUCCESS;
+        }
+
+        return ActionResult.PASS;
     }
 
     public static VoxelShape rotateShape(Direction from, Direction to, VoxelShape shape) {

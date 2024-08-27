@@ -17,10 +17,7 @@
   "parent": "minecraft:pissnshit/mechanical_marvel",
   "criteria": {
     "mechanical_toilet": {
-      "conditions": {
-        "recipe_id": "pissnshit:mechanical_toilet"
-      },
-      "trigger": "minecraft:recipe_crafted"
+      "trigger": "pissnshit:toilet_used"
     }
   },
   "requirements": [
