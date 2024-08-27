@@ -5,13 +5,15 @@
   "item.pissnshit.shit": "Shit",
   "item.pissnshit.holy_shit": "Holy Shit",
 
+  "item.pissnshit.flushed": "Flushed",
+
   "block.pissnshit.piss": "Piss",
   "block.pissnshit.shit_block": "Shit Block",
 
   "block.pissnshit.shit_candle": "Shit Candle",
   "block.pissnshit.shit_candle.tooltip": "§8§oIt smells like shit...",
 
-  "block.pissnshit.mechanical_sanctifier": "Mechanical Sanctifier",
+  "block.pissnshit.mechanical_toilet": "Mechanical Toilet",
 
   "effect.pissnshit.diarrhea": "Diarrhea",
 
@@ -37,6 +39,12 @@
   "advancements.pissnshit.yellow_liquid.description": "Obtain a bottle of piss.",
   "advancements.pissnshit.piss_cubed.title": "Piss³",
   "advancements.pissnshit.piss_cubed.description": "Obtain a bucket of piss.",
+
+  "advancements.pissnshit.mechanical_marvel.title": "Mechanical Marvel",
+  "advancements.pissnshit.mechanical_marvel.description": "Craft a mechanical toilet.",
+
+  "advancements.pissnshit.flushed.title": "Flush(ed)",
+  "advancements.pissnshit.flushed.description": "Use your newly operational mechanical toilet.",
 
   "death.attack.fullOfPiss": "%1$s got full of piss.",
   "death.attack.fullOfShit": "%1$s got full of shit.",

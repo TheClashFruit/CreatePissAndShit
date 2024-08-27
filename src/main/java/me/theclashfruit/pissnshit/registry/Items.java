@@ -76,6 +76,15 @@ public class Items {
         )
     );
 
+    public static Item FLUSHED = register(
+        "flushed",
+        new Item(
+            new Item
+                .Settings()
+                .rarity(Rarity.EPIC)
+        )
+    );
+
     public static Item SHIT_BLOCK = register(
         "shit_block",
         new BlockItem(
@@ -87,6 +96,14 @@ public class Items {
         "shit_candle",
         new ShitCandle(
             Blocks.SHIT_CANDLE,
+            new Item.Settings()
+        )
+    );
+
+    public static Item MECHANICAL_TOILET = register(
+        "mechanical_toilet",
+        new BlockItem(
+            Blocks.MECHANICAL_TOILET,
             new Item.Settings()
         )
     );
