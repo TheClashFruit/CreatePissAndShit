@@ -1,5 +1,7 @@
 package me.theclashfruit.pissnshit.util;
 
+import me.theclashfruit.pissnshit.blocks.toilet.MechanicalToiletBlock;
+import me.theclashfruit.pissnshit.blocks.toilet.MechanicalToiletBlockEntity;
 import me.theclashfruit.pissnshit.network.PissSyncPacket;
 import me.theclashfruit.pissnshit.registry.DamageTypes;
 import net.minecraft.entity.player.PlayerEntity;
@@ -7,6 +9,9 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Position;
+import net.minecraft.world.World;
 
 import static me.theclashfruit.pissnshit.PissAndShit.CONFIG;
 
@@ -76,6 +81,21 @@ public class PissManager {
         } else {
             player.sendMessage(Text.literal("You can't piss yet!"), true);
         }
+    }
+
+    public void pissOnToilet(PlayerEntity player, MechanicalToiletBlock toiletBlock, BlockPos toiletPos) {
+        World world = player.getWorld();
+
+        if (pissLevel >= 1) {
+            this.pissLevel -= 1;
+
+            if (world.getBlockEntity(toiletPos) instanceof MechanicalToiletBlockEntity toiletEntity) {
+                toiletEntity.addPiss(10);
+            }
+        }
+
+        // Sync Piss Level
+        PissSyncPacket.sendToClient((ServerPlayerEntity) player, this.pissLevel);
     }
 
     public void readNbt(NbtCompound nbt) {

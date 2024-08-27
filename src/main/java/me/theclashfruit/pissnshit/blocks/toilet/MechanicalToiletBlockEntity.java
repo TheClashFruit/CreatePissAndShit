@@ -14,10 +14,12 @@ import io.github.fabricators_of_create.porting_lib.fluids.FluidStack;
 import io.github.fabricators_of_create.porting_lib.util.FluidTextUtil;
 import io.github.fabricators_of_create.porting_lib.util.FluidUnit;
 import me.theclashfruit.pissnshit.registry.Blocks;
+import me.theclashfruit.pissnshit.registry.Fluids;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
 import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
 import net.fabricmc.fabric.api.transfer.v1.storage.base.SidedStorageBlockEntity;
+import net.fabricmc.fabric.api.transfer.v1.transaction.TransactionContext;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.text.Text;
@@ -31,6 +33,8 @@ import javax.annotation.Nullable;
 import java.awt.*;
 import java.util.List;
 
+import static com.simibubi.create.content.kinetics.BlockStressValues.getCapacity;
+
 public class MechanicalToiletBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, SidedStorageBlockEntity {
     private SmartFluidTankBehaviour tank;
 
@@ -40,7 +44,7 @@ public class MechanicalToiletBlockEntity extends SmartBlockEntity implements IHa
 
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
-        tank = new SmartFluidTankBehaviour(SmartFluidTankBehaviour.OUTPUT, this, 2, FluidConstants.BUCKET, true)
+        tank = new SmartFluidTankBehaviour(SmartFluidTankBehaviour.OUTPUT, this, 1, FluidConstants.BUCKET, true)
             .forbidInsertion();
 
         behaviours.add(tank);
@@ -92,5 +96,11 @@ public class MechanicalToiletBlockEntity extends SmartBlockEntity implements IHa
             tooltip.remove(0);
 
         return true;
+    }
+
+    public void addPiss(int amount) {
+        for (SmartFluidTankBehaviour.TankSegment tank : tank.getTanks()) {
+            tank.getTank().setFluid(new FluidStack(FluidVariant.of(Fluids.STILL_PISS), tank.getTank().getFluid().getAmount() + amount));
+        }
     }
 }
