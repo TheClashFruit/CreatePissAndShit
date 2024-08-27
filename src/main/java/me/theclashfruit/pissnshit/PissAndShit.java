@@ -5,12 +5,15 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigHolder;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import me.theclashfruit.pissnshit.config.MainConfig;
+import me.theclashfruit.pissnshit.criteria.ToiletUseTrigger;
 import me.theclashfruit.pissnshit.network.PissingPacket;
 import me.theclashfruit.pissnshit.registry.*;
+import me.theclashfruit.pissnshit.util.FlushedUtil;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
@@ -27,6 +30,8 @@ public class PissAndShit implements ModInitializer {
 
     public static final GameRules.Key<GameRules.BooleanRule> PISS_SOURCE_CONVERSION = GameRuleRegistry.register("pissSourceConversion", GameRules.Category.UPDATES, GameRuleFactory.createBooleanRule(false));
 
+    public static ToiletUseTrigger TOILET_USED = Criteria.register(new ToiletUseTrigger());
+
     public static MainConfig CONFIG;
     public static ConfigHolder<MainConfig> CONFIG_HOLDER;
 
@@ -37,6 +42,7 @@ public class PissAndShit implements ModInitializer {
         Fluids.init();
         Items.init();
         Blocks.init();
+        Entities.init();
 
         StatusEffects.init();
         Potions.init();
@@ -64,6 +70,8 @@ public class PissAndShit implements ModInitializer {
                 );
             }
         });
+
+        LOGGER.info(FlushedUtil.flushify("Hello, World!"));
 
         // Register Packets
         PissingPacket.register();

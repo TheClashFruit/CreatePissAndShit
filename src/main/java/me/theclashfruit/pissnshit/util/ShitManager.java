@@ -1,5 +1,6 @@
 package me.theclashfruit.pissnshit.util;
 
+import me.theclashfruit.pissnshit.blocks.toilet.MechanicalToiletBlock;
 import me.theclashfruit.pissnshit.network.ShitSyncPacket;
 import me.theclashfruit.pissnshit.registry.DamageTypes;
 import me.theclashfruit.pissnshit.registry.StatusEffects;
@@ -12,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.math.BlockPos;
 
 import static me.theclashfruit.pissnshit.PissAndShit.CONFIG;
 import static me.theclashfruit.pissnshit.PissAndShit.LOGGER;
@@ -75,6 +77,15 @@ public class ShitManager {
                 new StatusEffectInstance(StatusEffects.DIARRHEA, 1800)
             );
         }
+    }
+
+    public void shitOnToilet(PlayerEntity player, MechanicalToiletBlock toiletBlock, BlockPos toiletPos) {
+        if (shitLevel >= 1) {
+            this.shitLevel -= 1;
+        }
+
+        // Sync Shit Level
+        ShitSyncPacket.sendToClient((ServerPlayerEntity) player, this.shitLevel);
     }
 
     public void readNbt(NbtCompound nbt) {

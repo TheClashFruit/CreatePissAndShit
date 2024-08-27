@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "pissnshit:flushed"
+    },
+    "title": {
+      "translate": "advancements.pissnshit.flushed.title"
+    },
+    "description": {
+      "translate": "advancements.pissnshit.flushed.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:pissnshit/mechanical_marvel",
+  "criteria": {
+    "mechanical_toilet": {
+      "trigger": "pissnshit:toilet_used"
+    }
+  },
+  "requirements": [
+    [
+      "mechanical_toilet"
+    ]
+  ]
+}

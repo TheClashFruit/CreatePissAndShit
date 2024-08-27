@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " V ",
+    "CTL",
+    " # "
+  ],
+  "key": {
+    "V": {
+      "item": "create:fluid_valve"
+    },
+    "C": {
+      "item": "create:cogwheel"
+    },
+    "T": {
+      "item": "create:fluid_tank"
+    },
+    "L": {
+      "item": "minecraft:lever"
+    },
+    "#": {
+      "item": "create:copper_casing"
+    }
+  },
+  "result": {
+    "item": "pissnshit:mechanical_toilet",
+    "count": 2
+  }
+}

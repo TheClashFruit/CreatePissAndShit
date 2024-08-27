@@ -23,8 +23,13 @@ public class ItemGroups {
             entries.add(Items.SHIT);
             entries.add(Items.HOLY_SHIT);
 
+            // 😳
+            entries.add(Items.FLUSHED);
+
             entries.add(Items.SHIT_CANDLE);
-            entries.add(Blocks.SHIT_BLOCK);
+            entries.add(Items.SHIT_BLOCK);
+
+            entries.add(Items.MECHANICAL_TOILET);
         })
         .build();
 
