@@ -89,8 +89,10 @@ public class PissManager {
         if (pissLevel >= 1) {
             this.pissLevel -= 1;
 
-            if (world.getBlockEntity(toiletPos) instanceof MechanicalToiletBlockEntity toiletEntity) {
-                toiletEntity.addPiss(10);
+            if (toiletPos != null) {
+                if (world.getBlockEntity(toiletPos) instanceof MechanicalToiletBlockEntity toiletEntity) {
+                    toiletEntity.addPiss(10);
+                }
             }
         }
 
