@@ -42,6 +42,8 @@ public class Blocks {
 
     public static final MechanicalToiletBlock MECHANICAL_TOILET = Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "mechanical_toilet"), new MechanicalToiletBlock(AbstractBlock.Settings.create()
         .mapColor(MapColor.ORANGE)
+        .hardness(3)
+        .requiresTool()
     ));
 
     public static final BlockEntityType<MechanicalToiletBlockEntity> MECHANICAL_TOILET_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "mechanical_toilet_block_entity"), BlockEntityType.Builder.create(MechanicalToiletBlockEntity::new, MECHANICAL_TOILET).build(null));

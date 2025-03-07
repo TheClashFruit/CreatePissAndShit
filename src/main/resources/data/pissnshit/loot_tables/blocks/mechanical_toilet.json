@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "pissnshit:blocks/mechanical_toilet",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "pissnshit:mechanical_toilet"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}
